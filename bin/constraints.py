@@ -46,3 +46,8 @@ try:
 except sqlalchemy.exc.IntegrityError as e:
     print('Invalid ages: integrity violation blocked')
     session.rollback()
+
+# CheckConstraints can be created for columns and tables. The text of the CheckConstraint is passed directly through to the database. 
+#     Certain constraints in SQLAlchemy can be added directly to the column as we define it. The nullable constraint allows us to make sure the values added to the columns are not null. We can define this by adding the argument nullable=False to the Column constructor.
+
+# If it's required that the values in your columns must be unique then the unique constraint can be specified by adding the argument unique=True to the Column constructor.
